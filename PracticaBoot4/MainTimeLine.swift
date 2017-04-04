@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class MainTimeLine: UITableViewController {
 
@@ -21,6 +22,8 @@ class MainTimeLine: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        FIRAnalytics.setScreenName("MainTimeLine", screenClass: "Main")
+        
         self.refreshControl?.addTarget(self, action: #selector(hadleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     

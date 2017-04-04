@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class AuthorPostList: UITableViewController {
 
@@ -16,6 +17,8 @@ class AuthorPostList: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRAnalytics.setScreenName("AuthorPostListViewController", screenClass: "AuthorPost")
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false

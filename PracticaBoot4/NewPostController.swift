@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -23,6 +24,8 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        FIRAnalytics.setScreenName("NewPostViewController", screenClass: "NewPost")
 
         // Do any additional setup after loading the view.
     }
