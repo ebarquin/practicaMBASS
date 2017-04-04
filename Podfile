@@ -7,5 +7,8 @@ target 'PracticaBoot4' do
 
   # Pods for PracticaBoot4
   pod 'Firebase/Core'
+  
+  # Pods for FB RTB
+  pod 'Firebase/Database'
 
 end
