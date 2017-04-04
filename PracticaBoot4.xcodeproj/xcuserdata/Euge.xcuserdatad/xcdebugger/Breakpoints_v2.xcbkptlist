@@ -38,13 +38,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PracticaBoot4/AppDelegate.swift"
-            timestampString = "512390439.252788"
+            timestampString = "512990478.425862"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "42"
-            endingLineNumber = "42"
-            landmarkName = "AppDelegate"
-            landmarkType = "3">
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "applicationWillTerminate(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -77,38 +77,6 @@
             endingLineNumber = "113"
             landmarkName = "tableView(_:editActionsForRowAt:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PracticaBoot4.AuthorPostList.(tableView (__ObjC.UITableView, editActionsForRowAt : Foundation.IndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;__ObjC.UITableViewRowAction&gt;&gt;).(closure #1)"
-                  moduleName = "PracticaBoot4"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Euge/Desktop/IOS%20BootCamp/mbaas/PracticaBoot4/PracticaBoot4/AuthorPostList.swift"
-                  timestampString = "512420460.578484"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "305">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "PracticaBoot4.AuthorPostList.(tableView (__ObjC.UITableView, editActionsForRowAt : Foundation.IndexPath) -&gt; Swift.Optional&lt;Swift.Array&lt;__ObjC.UITableViewRowAction&gt;&gt;).(closure #1)"
-                  moduleName = "PracticaBoot4"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/Euge/Desktop/IOS%20BootCamp/mbaas/PracticaBoot4/PracticaBoot4/AuthorPostList.swift"
-                  timestampString = "512420460.631654"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "2858">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
