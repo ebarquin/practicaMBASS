@@ -410,6 +410,7 @@
                         <outlet property="loginRegisterSegmentedControl" destination="rXk-ji-YXf" id="dp7-0l-cB3"/>
                         <outlet property="nameTextField" destination="7fy-ad-BCn" id="L1q-oj-U9I"/>
                         <outlet property="passwordTextField" destination="7mP-Pi-VGS" id="DU3-Wr-lBa"/>
+                        <outlet property="registerLoginButtonText" destination="pjn-0v-fZ1" id="tbi-Ql-9sV"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lY9-1h-e0N" userLabel="First Responder" sceneMemberID="firstResponder"/>

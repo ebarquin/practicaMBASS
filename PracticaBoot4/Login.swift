@@ -22,6 +22,7 @@ class Login: UIViewController {
 
     @IBOutlet weak var loginRegisterSegmentedControl: UISegmentedControl!
     
+    @IBOutlet weak var registerLoginButtonText: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,9 @@ class Login: UIViewController {
     }
     
     @IBAction func handleLoginRegisterChange(_ sender: Any) {
+        let title = loginRegisterSegmentedControl.titleForSegment(at: loginRegisterSegmentedControl.selectedSegmentIndex)
+        registerLoginButtonText.setTitle(title, for: .normal)
+        
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             nameTextField.isHidden = true
             inputsViewHeightConstraint.constant = 100
