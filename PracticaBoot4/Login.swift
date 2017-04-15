@@ -44,7 +44,34 @@ class Login: UIViewController {
         
     }
     @IBAction func loginRegisterAction(_ sender: Any) {
-        handleRegister()
+        if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
+            
+            handleLogin()
+            
+        } else {
+            
+            handleRegister()
+
+        }
+        
+    }
+    
+    func handleLogin() {
+        
+        guard let email = emailTextField.text, let password = passwordTextField.text else {
+            print("Form not valid")
+            return
+        }
+        FIRAuth.auth()?.signIn(withEmail: email, password: password, completion: { (user, error) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            //successfully logged in
+            self.dismiss(animated: true, completion: nil)
+        })
+        
     }
     
     func handleRegister() {
@@ -57,9 +84,35 @@ class Login: UIViewController {
                 print(error)
                 return
             }
+            
+            guard let uid = user?.uid else {
+                return
+            }
+            
+            //successfully authenticated user 
+            //save the user also in database
+            
+            let values = ["name": name, "email": email]
+            self.registerUserIntoDatabaseByUID(uid: uid, values: values)
+            
+        
         })
         
+    }
+    
+    func registerUserIntoDatabaseByUID (uid: String, values: [String: Any]) {
         
+        let ref = FIRDatabase.database().reference()
+        let usersReference = ref.child("users").child(uid)
+        usersReference.updateChildValues(values, withCompletionBlock: { (error, ref) in
+            
+            if error != nil {
+                print(error)
+                return
+            }
+            self.dismiss(animated: true, completion: nil)
+            print("succesfully saved user in FB Data Base")
+        })
     }
 }
 
