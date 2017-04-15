@@ -15,6 +15,7 @@
 		5D931D031E83F67C005051E9 /* PostReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D021E83F67C005051E9 /* PostReview.swift */; };
 		5D931D051E83F773005051E9 /* AuthorPostList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D041E83F773005051E9 /* AuthorPostList.swift */; };
 		5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D931D061E83F7BA005051E9 /* NewPostController.swift */; };
+		9C031BE21EA22D1D00397DE2 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C031BE11EA22D1D00397DE2 /* Login.swift */; };
 		9C74DB2A1E939B060050312E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C74DB291E939B060050312E /* GoogleService-Info.plist */; };
 		A47B9FE52FFF480AAF4EF471 /* Pods_PracticaBoot4.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0FC5D2113DEADE8CC6F5FC18 /* Pods_PracticaBoot4.framework */; };
 /* End PBXBuildFile section */
@@ -32,6 +33,7 @@
 		5D931D021E83F67C005051E9 /* PostReview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostReview.swift; sourceTree = "<group>"; };
 		5D931D041E83F773005051E9 /* AuthorPostList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthorPostList.swift; sourceTree = "<group>"; };
 		5D931D061E83F7BA005051E9 /* NewPostController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewPostController.swift; sourceTree = "<group>"; };
+		9C031BE11EA22D1D00397DE2 /* Login.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
 		9C74DB291E939B060050312E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		AC6B93687E2748889C901F7B /* Pods-PracticaBoot4.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PracticaBoot4.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PracticaBoot4/Pods-PracticaBoot4.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -118,6 +120,7 @@
 			isa = PBXGroup;
 			children = (
 				5D931D021E83F67C005051E9 /* PostReview.swift */,
+				9C031BE11EA22D1D00397DE2 /* Login.swift */,
 			);
 			name = "All users";
 			sourceTree = "<group>";
@@ -276,6 +279,7 @@
 				5D931D051E83F773005051E9 /* AuthorPostList.swift in Sources */,
 				5D931CE61E83EEEA005051E9 /* AppDelegate.swift in Sources */,
 				5D931D031E83F67C005051E9 /* PostReview.swift in Sources */,
+				9C031BE21EA22D1D00397DE2 /* Login.swift in Sources */,
 				5D931D071E83F7BA005051E9 /* NewPostController.swift in Sources */,
 				5D931D011E83F5D1005051E9 /* MainTimeLine.swift in Sources */,
 			);
