@@ -13,5 +13,8 @@ target 'PracticaBoot4' do
   
   #Pods for FB Authentication
   pod 'Firebase/Auth'
+  
+  #Pods for FB Storage
+  pod 'Firebase/Storage'
 
 end
