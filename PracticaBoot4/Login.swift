@@ -43,7 +43,13 @@ class Login: UIViewController {
         }
         
     }
+
+    @IBAction func anonimouslySurf(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
+    }
     @IBAction func loginRegisterAction(_ sender: Any) {
+
+        
         if loginRegisterSegmentedControl.selectedSegmentIndex == 0 {
             
             handleLogin()

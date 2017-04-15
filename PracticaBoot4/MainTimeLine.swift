@@ -27,6 +27,20 @@ class MainTimeLine: UITableViewController {
         self.refreshControl?.addTarget(self, action: #selector(hadleRefresh(_:)), for: UIControlEvents.valueChanged)
     }
     
+    @IBAction func handleLogout(_ sender: Any) {
+        
+        do{
+            
+            try FIRAuth.auth()?.signOut()
+            
+        } catch let error {
+            print(error)
+            
+            
+        }
+        
+    }
+
     func hadleRefresh(_ refreshControl: UIRefreshControl) {
         refreshControl.endRefreshing()
     }

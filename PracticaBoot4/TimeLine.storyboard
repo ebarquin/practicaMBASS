@@ -35,8 +35,9 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="yMV-An-MNP">
-                        <barButtonItem key="leftBarButtonItem" title="Login" id="K3V-OG-cE3">
+                        <barButtonItem key="leftBarButtonItem" title="Logout" id="K3V-OG-cE3">
                             <connections>
+                                <action selector="handleLogout:" destination="93k-iG-gRG" id="7Vw-yI-GKO"/>
                                 <segue destination="SfF-Zx-TIv" kind="popoverPresentation" popoverAnchorBarButtonItem="K3V-OG-cE3" id="52R-fs-bSL">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -388,20 +389,34 @@
                                     <action selector="loginRegisterAction:" destination="SfF-Zx-TIv" eventType="touchUpInside" id="xj0-bs-ncR"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vGr-T7-IDB">
+                                <rect key="frame" x="28" y="577" width="319" height="50"/>
+                                <color key="backgroundColor" red="0.23921568630000001" green="0.35686274509999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="Anonimously">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="anonimouslySurf:" destination="SfF-Zx-TIv" eventType="touchUpInside" id="iD9-6c-g8q"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.31372549020000001" green="0.39607843139999999" blue="0.63137254899999995" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="vGr-T7-IDB" firstAttribute="top" secondItem="pjn-0v-fZ1" secondAttribute="bottom" constant="92" id="8qo-Hu-eB3"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Roj-hX-CEg" secondAttribute="trailing" constant="12" id="GUi-fN-yvM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rXk-ji-YXf" secondAttribute="trailing" constant="12" id="If6-SO-7QI"/>
-                            <constraint firstItem="pjn-0v-fZ1" firstAttribute="top" secondItem="7fy-ad-BCn" secondAttribute="bottom" constant="126.5" id="Qwx-SP-6aO"/>
                             <constraint firstAttribute="trailingMargin" secondItem="pjn-0v-fZ1" secondAttribute="trailing" constant="12" id="RPe-SC-ltn"/>
                             <constraint firstItem="rXk-ji-YXf" firstAttribute="top" secondItem="2YL-Aa-7q5" secondAttribute="bottom" constant="181" id="WLj-5c-VCP"/>
+                            <constraint firstItem="vGr-T7-IDB" firstAttribute="leading" secondItem="pjn-0v-fZ1" secondAttribute="leading" id="YTg-ve-ybY"/>
                             <constraint firstItem="Roj-hX-CEg" firstAttribute="centerX" secondItem="AHi-27-rQV" secondAttribute="centerX" id="YWu-Gz-MAq"/>
                             <constraint firstItem="pjn-0v-fZ1" firstAttribute="leading" secondItem="AHi-27-rQV" secondAttribute="leadingMargin" constant="12" id="ZGX-3C-lcs"/>
+                            <constraint firstItem="vGr-T7-IDB" firstAttribute="height" secondItem="pjn-0v-fZ1" secondAttribute="height" id="fsV-OU-6LU"/>
                             <constraint firstItem="Roj-hX-CEg" firstAttribute="centerY" secondItem="AHi-27-rQV" secondAttribute="centerY" id="i2c-DL-G5h"/>
                             <constraint firstItem="rXk-ji-YXf" firstAttribute="leading" secondItem="AHi-27-rQV" secondAttribute="leadingMargin" constant="12" id="kZk-aZ-OOz"/>
                             <constraint firstItem="7fy-ad-BCn" firstAttribute="top" secondItem="rXk-ji-YXf" secondAttribute="bottom" constant="22.5" id="mpr-kr-BOo"/>
                             <constraint firstItem="Roj-hX-CEg" firstAttribute="leading" secondItem="AHi-27-rQV" secondAttribute="leadingMargin" constant="12" id="s5K-Pt-UJX"/>
+                            <constraint firstItem="vGr-T7-IDB" firstAttribute="width" secondItem="pjn-0v-fZ1" secondAttribute="width" id="uFn-wO-MHT"/>
+                            <constraint firstItem="JBt-hK-CDT" firstAttribute="top" secondItem="vGr-T7-IDB" secondAttribute="bottom" constant="40" id="wp4-dL-3V7"/>
                         </constraints>
                     </view>
                     <connections>
