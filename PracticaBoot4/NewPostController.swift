@@ -44,28 +44,20 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
 
     @IBAction func savePostInCloud(_ sender: Any) {
         // preparado para implementar codigo que persita en el cloud
-        let postsReference = FIRDatabase.database().reference()
         
-        let key = postsReference.child("posts").childByAutoId().key
+        let post = Post.init(title: titlePostTxt.text!, postText: textPostTxt.text!, published: isReadyToPublish, user: (FIRAuth.auth()?.currentUser?.uid)!, email: (FIRAuth.auth()?.currentUser?.email)!)
         
-        guard let title = titlePostTxt.text, let postText = textPostTxt.text, let user = FIRAuth.auth()?.currentUser?.uid else {
-            print("Form not valid")
-            return
+        
+        var data = Data()
+        if let image = imagePost.image, let imageData = UIImagePNGRepresentation(image){
+            data = imageData
         }
-        let post = ["title": title, "postText": postText, "publish": isReadyToPublish, "user": user  ] as [String : Any]
-        let values = ["\(key)" : post]
-        postsReference.updateChildValues(values) { (err, ref) in
-            if err != nil {
-                print(err)
-                return
-            }
-            
-            
+        Post.uploadPostToFB(post: post, image: data)
         self.navigationController?.popViewController(animated: true)
-        }
-        
         
     }
+    
+    
     /*
     // MARK: - Navigation
 
