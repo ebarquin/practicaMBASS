@@ -30,7 +30,7 @@ class Post: NSObject {
         
         title = (snap?.value as? [String: Any])?["title"] as! String
         postText = (snap?.value as? [String: Any])?["postText"] as! String
-        photoURL = (snap?.value as? [String: Any])?["photourl"] as! String
+        photoURL = (snap?.value as? [String: Any])?["photoURL"] as! String
         published = (snap?.value as? [String: Any])?["published"] as! Bool
         user = (snap?.value as? [String: Any])?["user"] as! String
         email = (snap?.value as? [String: Any])?["email"] as! String

@@ -11,11 +11,12 @@ import Firebase
 
 class MainTimeLine: UITableViewController {
 
-    var model = ["post1", "post2"]
-    let cellIdentier = "POSTSCELL"
+    var model : [Post] = []
+    let cellIdentifier = "POSTSCELL"
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        getAllPublishedPostsFromFB()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -63,9 +64,9 @@ class MainTimeLine: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentier, for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
 
-        cell.textLabel?.text = model[indexPath.row]
+        cell.textLabel?.text = model[indexPath.row].title
 
         return cell
     }
@@ -87,5 +88,33 @@ class MainTimeLine: UITableViewController {
         }
     }
 
+    func getAllPublishedPostsFromFB() {
+        var posts: [Post] = []
+        
+        let rootRef = FIRDatabase.database().reference().child("posts")
+        rootRef.observe(FIRDataEventType.value, with: { ( snap ) in
+            
+            for postFB in snap.children {
+                
+                let post = Post(snap: (postFB as! FIRDataSnapshot))
+                posts.append(post)
+                
+            }
+            
+            self.model = posts
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+            
+            
+        }) { (error) in
+            print(error)
+        }
+        
+    }
+    
+
+    
+    
 
 }
