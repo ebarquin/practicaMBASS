@@ -37,7 +37,7 @@ class Post: NSObject {
         
     }
     
-    private class func uploadImageToStorage(image: Data, completion: @escaping (String) -> ()) {
+    class func uploadImageToStorage(image: Data, completion: @escaping (String) -> ()) {
         let storage = FIRStorage.storage().reference()
         let imageStorage = storage.child("post")
         let imageUID = imageStorage.child("\(NSUUID().uuidString).png")
@@ -56,12 +56,18 @@ class Post: NSObject {
             post.photoURL = photo
             let postsRef = FIRDatabase.database().reference().child("posts")
             let key = postsRef.childByAutoId().key
-            let postInFB = ["\(key)": post]
-            postsRef.updateChildValues(postInFB)
+            let postDict = getJSON(post: post)
+            let postInFB = ["\(key)": postDict]
+            postsRef.updateChildValues((postInFB as NSDictionary) as! [AnyHashable : Any])
             
             
         }
         
+    }
+    
+    class func getJSON(post: Post) -> NSDictionary {
+        let json : [String: Any] = ["title": post.title, "postText": post.postText, "photoURL": post.photoURL, "published": post.published, "user": post.user, "email": post.email]
+        return json as NSDictionary
     }
     
 }

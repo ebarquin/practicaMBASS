@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PracticaBoot4/MainTimeLine.swift"
-            timestampString = "513962853.741854"
+            timestampString = "514053010.125896"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128">
+            startingLineNumber = "154"
+            endingLineNumber = "154">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -126,11 +126,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "PracticaBoot4/Post.swift"
-            timestampString = "514030549.679994"
+            timestampString = "514067587.754894"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
+            startingLineNumber = "60"
+            endingLineNumber = "60"
             landmarkName = "uploadPostToFB(post:image:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -141,14 +141,46 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PracticaBoot4/Post.swift"
-            timestampString = "514031008.441819"
+            filePath = "PracticaBoot4/NewPostController.swift"
+            timestampString = "514054299.470307"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "uploadPostToFB(post:image:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "savePostInCloud(_:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticaBoot4.NewPostController.savePostInCloud (Any) -&gt; ()"
+                  moduleName = "PracticaBoot4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Euge/Desktop/IOS%20BootCamp/mbaas/PracticaBoot4/PracticaBoot4/NewPostController.swift"
+                  timestampString = "514067741.470754"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "20">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PracticaBoot4.NewPostController.savePostInCloud (Any) -&gt; ()"
+                  moduleName = "PracticaBoot4"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Euge/Desktop/IOS%20BootCamp/mbaas/PracticaBoot4/PracticaBoot4/NewPostController.swift"
+                  timestampString = "514067741.474611"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "48"
+                  endingLineNumber = "48"
+                  offsetFromSymbolStart = "2892">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -157,13 +189,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "PracticaBoot4/Post.swift"
-            timestampString = "514031008.441819"
+            filePath = "PracticaBoot4/NewPostController.swift"
+            timestampString = "514054770.900092"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "59"
-            endingLineNumber = "59"
-            landmarkName = "uploadPostToFB(post:image:)"
+            startingLineNumber = "55"
+            endingLineNumber = "55"
+            landmarkName = "savePostInCloud(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

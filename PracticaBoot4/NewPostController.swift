@@ -45,7 +45,7 @@ class NewPostController: UIViewController, UIImagePickerControllerDelegate, UINa
     @IBAction func savePostInCloud(_ sender: Any) {
         // preparado para implementar codigo que persita en el cloud
         
-        let post = Post.init(title: titlePostTxt.text!, postText: textPostTxt.text!, published: isReadyToPublish, user: (FIRAuth.auth()?.currentUser?.uid)!, email: (FIRAuth.auth()?.currentUser?.email)!)
+        let post = Post.init(title: titlePostTxt.text! as String, postText: textPostTxt.text! as String, published: isReadyToPublish as Bool, user: (FIRAuth.auth()?.currentUser?.uid)! as String, email: (FIRAuth.auth()?.currentUser?.email)! as String)
         
         
         var data = Data()
