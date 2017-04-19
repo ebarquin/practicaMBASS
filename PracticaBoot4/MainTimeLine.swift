@@ -16,7 +16,12 @@ class MainTimeLine: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getAllPublishedPostsFromFB()
+        var postsDic: [Post] = []
+        getAllPublishedPostsFromFB { (posts) in
+            postsDic = posts
+            self.model = postsDic
+            self.tableView.reloadData()
+        }
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -88,11 +93,14 @@ class MainTimeLine: UITableViewController {
         }
     }
 
-    func getAllPublishedPostsFromFB() {
+    func getAllPublishedPostsFromFB(completion:@escaping ([Post]) -> Void) {
+        
         var posts: [Post] = []
         
-        let rootRef = FIRDatabase.database().reference().child("posts")
-        rootRef.observe(FIRDataEventType.value, with: { ( snap ) in
+        let postsRef = FIRDatabase.database().reference().child("posts")
+        let query = postsRef.queryOrdered(byChild: "published").queryEqual(toValue: true)
+        
+        query.observe(FIRDataEventType.value, with: { ( snap ) in
             
             for postFB in snap.children {
                 
@@ -100,11 +108,8 @@ class MainTimeLine: UITableViewController {
                 posts.append(post)
                 
             }
+            completion(posts)
             
-            self.model = posts
-            DispatchQueue.main.async {
-                self.tableView.reloadData()
-            }
             
             
         }) { (error) in

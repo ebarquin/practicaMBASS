@@ -13,7 +13,7 @@ class AuthorPostList: UITableViewController {
 
     let cellIdentifier = "POSTAUTOR"
     
-    var model = ["test1", "test2"]
+    var model :[Post] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +27,12 @@ class AuthorPostList: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         self.refreshControl?.addTarget(self, action: #selector(hadleRefresh(_:)), for: UIControlEvents.valueChanged)
+        var postDic: [Post] = []
+        getAllAuthorPosts { (posts) in
+            postDic = posts
+            self.model = postDic
+            self.tableView.reloadData()
+        }
     }
     
     func hadleRefresh(_ refreshControl: UIRefreshControl) {
@@ -51,7 +57,7 @@ class AuthorPostList: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
-        cell.textLabel?.text = model[indexPath.row]
+        cell.textLabel?.text = model[indexPath.row].title
     
         return cell
     }
@@ -114,4 +120,28 @@ class AuthorPostList: UITableViewController {
     }
     */
 
+    func getAllAuthorPosts(completion: @escaping ([Post]) -> Void) {
+        var posts: [Post] = []
+        
+        let postsRef = FIRDatabase.database().reference().child("posts")
+        let query = postsRef.queryOrdered(byChild: "user").queryEqual(toValue: FIRAuth.auth()?.currentUser?.uid)
+        
+        query.observe(FIRDataEventType.value, with: { ( snap ) in
+            
+            for postFB in snap.children {
+                
+                let post = Post(snap: (postFB as! FIRDataSnapshot))
+                posts.append(post)
+                
+            }
+            completion(posts)
+            
+            
+            
+        }) { (error) in
+            print(error)
+        }
+        
+    }
 }
+
