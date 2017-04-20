@@ -14,6 +14,8 @@ class AuthorPostList: UITableViewController {
     let cellIdentifier = "POSTAUTOR"
     
     var model :[Post] = []
+    var postsRef: FIRDatabaseReference!
+    var handle: UInt = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,6 +41,10 @@ class AuthorPostList: UITableViewController {
         refreshControl.endRefreshing()
     }
     
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        postsRef.removeObserver(withHandle: handle)
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -125,10 +131,10 @@ class AuthorPostList: UITableViewController {
     func getAllAuthorPosts(completion: @escaping ([Post]) -> Void) {
         var posts: [Post] = []
         
-        let postsRef = FIRDatabase.database().reference().child("posts")
+        postsRef = FIRDatabase.database().reference().child("posts")
         let query = postsRef.queryOrdered(byChild: "user").queryEqual(toValue: FIRAuth.auth()?.currentUser?.uid)
         
-        query.observe(FIRDataEventType.value, with: { ( snap ) in
+        handle = query.observe(FIRDataEventType.value, with: { ( snap ) in
             
             for postFB in snap.children {
                 
