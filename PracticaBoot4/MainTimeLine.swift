@@ -72,8 +72,9 @@ class MainTimeLine: UITableViewController {
         let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellIdentifier)
 
         cell.imageView?.image = UIImage(imageLiteralResourceName: "dummyProfilePicture")
-        cell.detailTextLabel?.text = model[indexPath.row].postText
         cell.textLabel?.text = model[indexPath.row].title
+        cell.detailTextLabel?.text = model[indexPath.row].postText
+        
 
         return cell
     }

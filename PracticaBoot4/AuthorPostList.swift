@@ -56,9 +56,11 @@ class AuthorPostList: UITableViewController {
 
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath)
+        let cell = UITableViewCell(style: .subtitle, reuseIdentifier: cellIdentifier)
+        
         cell.textLabel?.text = model[indexPath.row].title
-    
+        cell.detailTextLabel?.text = model[indexPath.row].postText
+        
         return cell
     }
     
