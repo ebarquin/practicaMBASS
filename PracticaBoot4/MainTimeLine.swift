@@ -71,7 +71,6 @@ class MainTimeLine: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: .subtitle, reuseIdentifier: cellIdentifier)
 
-        //cell.textLabel?.text = model[indexPath.row].title
         cell.imageView?.image = UIImage(imageLiteralResourceName: "dummyProfilePicture")
         cell.detailTextLabel?.text = model[indexPath.row].postText
         cell.textLabel?.text = model[indexPath.row].title
